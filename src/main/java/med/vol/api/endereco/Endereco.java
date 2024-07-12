@@ -2,10 +2,8 @@ package med.vol.api.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.vol.api.medico.DadosCadastromedico;
 
 @Embeddable
 @Getter
