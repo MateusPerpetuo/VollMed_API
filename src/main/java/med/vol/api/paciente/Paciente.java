@@ -9,6 +9,7 @@ import med.vol.api.endereco.Endereco;
 
 @Entity(name = "Paciente")
 @Table(name = "pacientes")
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode( of = "id")
