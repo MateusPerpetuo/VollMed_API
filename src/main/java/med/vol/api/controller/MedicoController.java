@@ -25,7 +25,7 @@ public class MedicoController {
     }
 
     @GetMapping                 //Pageable tem que ser uma classe do pacote Spring e nao awt
-    public Page<DadosListagemMedico> lisstarMedicos(
+    public Page<DadosListagemMedico> listarMedicos(
             @PageableDefault(size = 10, sort = {"nome"})
            // @RequestParam(required = false)
             Pageable paginacao) {

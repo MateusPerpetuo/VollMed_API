@@ -1,11 +1,7 @@
 package med.vol.api.controller;
 
 import jakarta.validation.Valid;
-import med.vol.api.medico.DadosCadastroMedico;
-import med.vol.api.paciente.DadosCadastroPaciente;
-import med.vol.api.paciente.DadosListagemPaciente;
-import med.vol.api.paciente.Paciente;
-import med.vol.api.paciente.PacienteRepository;
+import med.vol.api.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,7 +23,24 @@ public class PacienteController {
     }
 
     @GetMapping                           //Pageable tem que ser uma classe do pacote Spring e nao awt
-    public Page<DadosListagemPaciente> listarPaciente(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-        return repository.findAll(paginacao).map(DadosListagemPaciente::new);
+    public Page<DadosListagemPaciente> listarMedicos(
+            @PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
+
+        return repository.findAllByAtivoTrue(paginacao)
+                .map(DadosListagemPaciente::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizarPaciente dados) {
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir (@PathVariable Long id) {
+        var paciente = repository.getReferenceById(id);
+        paciente.excluir();
     }
 }

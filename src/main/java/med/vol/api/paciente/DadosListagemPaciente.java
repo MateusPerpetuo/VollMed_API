@@ -1,10 +1,14 @@
 package med.vol.api.paciente;
 
-public record DadosListagemPaciente( String nome,
-                                     String email,
-                                     String cpf) {
+import med.vol.api.medico.Medico;
+
+public record DadosListagemPaciente(
+        Long id,
+        String nome,
+        String email,
+        String cpf) {
 
     public DadosListagemPaciente (Paciente paciente){
-        this(paciente.getNome(), paciente.getEmail(), paciente.getCpf());
+        this(paciente.getId(), paciente.getNome(), paciente.getEmail(), paciente.getCpf());
     }
 }
