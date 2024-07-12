@@ -1,5 +1,6 @@
 package med.vol.api.controller;
 
+import jakarta.validation.Valid;
 import med.vol.api.medico.DadosCadastromedico;
 import med.vol.api.medico.Medico;
 import med.vol.api.medico.MedicoRepository;
@@ -16,7 +17,7 @@ public class MedicoController {
 
     @PostMapping
     @Transactional // tem que ser a anotação que vem do pacote do string
-    public void cadastrar( @RequestBody DadosCadastromedico dados) {
+    public void cadastrar( @RequestBody @Valid DadosCadastromedico dados) {
         repository.save(new Medico(dados));
     }
 }
