@@ -2,6 +2,8 @@ package med.vol.api.controller;
 
 import jakarta.validation.Valid;
 import med.vol.api.domain.usuario.DadosAutenticacao;
+import med.vol.api.domain.usuario.Usuario;
+import med.vol.api.infra.security.TokenService;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +21,14 @@ public class AutenticacaoController {
     @Autowired
     private AuthenticationManager manager;
 
+    @Autowired
+    private TokenService tokenService; // Cuidado pra nao criar a classe do Spring e sim a nossa
+
     @PostMapping
     public ResponseEntity efetuarLogin (@RequestBody @Valid DadosAutenticacao dados){
         var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication = manager.authenticate(token);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(tokenService.gerarToken((Usuario) authentication.getPrincipal()));
     }
 }
