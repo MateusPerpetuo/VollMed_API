@@ -1,48 +1,40 @@
-package med.vol.api.medico;
+package med.vol.api.domain.paciente;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.vol.api.endereco.Endereco;
+import med.vol.api.domain.endereco.Endereco;
 
-@Entity(name = "Medico")
-@Table(name = "medicos")
-
-// Anotações do lombok
+@Entity(name = "Paciente")
+@Table(name = "pacientes")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode( of = "id")
-public class Medico {
+public class Paciente {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Boolean ativo;
     private String nome;
     private String email;
     private String telefone;
-    private String crm;
-
-    @Enumerated(EnumType.STRING)
-    private Especialidade especialidade;
-
-    @Embedded  // não cria uma nova tabela, são classes separadas no java
-               // mas no DB é considerado parte da mesma tabela
+    private String cpf;
+    @Embedded
     private Endereco endereco;
 
-    public Medico(DadosCadastroMedico dados) {
+    public Paciente(DadosCadastroPaciente dados) {
         this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
-        this.crm = dados.crm();
-        this.especialidade = dados.especialidade();
-        this.endereco = new Endereco((dados.endereco()));
+        this.cpf = dados.cpf();
+        this.endereco = (dados.endereco());
     }
-
-    public void atualizarInformacoes( DadosAtualizarMedico dados){
+    public void atualizarInformacoes( DadosAtualizarPaciente dados){
         if (dados.nome() != null){
             this.nome = dados.nome();
         }
@@ -55,6 +47,7 @@ public class Medico {
             this.endereco.atualizarInformacoes(dados.endereco());
         }
     }
+
 
     public void excluir() {
         this.ativo = false;

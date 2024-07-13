@@ -1,6 +1,5 @@
-package med.vol.api.paciente;
+package med.vol.api.domain.paciente;
 
-import med.vol.api.medico.Medico;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

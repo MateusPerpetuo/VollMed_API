@@ -1,6 +1,4 @@
-package med.vol.api.paciente;
-
-import med.vol.api.medico.Medico;
+package med.vol.api.domain.paciente;
 
 public record DadosListagemPaciente(
         Long id,
