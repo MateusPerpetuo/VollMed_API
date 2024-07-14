@@ -1,6 +1,7 @@
 package med.vol.api.infra.security;
 
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import med.vol.api.domain.usuario.Usuario;
@@ -33,6 +34,19 @@ public class TokenService {
         }
     }
 
+    public String getSubject (String tokenJWT) {
+        try{
+            var algoritmo = Algorithm.HMAC256(secret);
+
+            return JWT.require(algoritmo)
+                    .withIssuer("API Voll.med")
+                    .build()
+                    .verify(tokenJWT)
+                    .getSubject();
+        } catch (JWTCreationException e){
+            throw new RuntimeException("Token JWT inválido ou expirado", e);
+        }
+    }
 
     // Metodo que define 2 hrs de validade para o token
     private Instant dataExpiracao() {
