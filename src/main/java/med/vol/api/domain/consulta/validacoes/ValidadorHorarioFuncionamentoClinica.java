@@ -12,7 +12,6 @@ public class ValidadorHorarioFuncionamentoClinica implements ValidadorAgendament
     //  horario de funcionamento   ->   segunda a sábado das 07:00 às 19:00 hrs
     //                             ->   cada consulta tem duração fixa de 1 hr
 
-
     public void validar (DadosAgendamentoConsulta dados){
         var dataConsulta = dados.data();
 
