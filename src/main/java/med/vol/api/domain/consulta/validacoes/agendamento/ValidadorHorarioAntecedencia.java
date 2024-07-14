@@ -1,10 +1,9 @@
-package med.vol.api.domain.consulta.validacoes;
+package med.vol.api.domain.consulta.validacoes.agendamento;
 
 import med.vol.api.domain.ValidacaoException;
 import med.vol.api.domain.consulta.DadosAgendamentoConsulta;
 import org.springframework.stereotype.Component;
 
-import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
