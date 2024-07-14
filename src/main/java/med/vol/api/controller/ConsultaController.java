@@ -2,6 +2,7 @@ package med.vol.api.controller;
 
 
 import jakarta.validation.Valid;
+import med.vol.api.domain.consulta.AgendaDeConsultas;
 import med.vol.api.domain.consulta.ConsultaRepository;
 import med.vol.api.domain.consulta.DadosAgendamentoConsulta;
 import med.vol.api.domain.consulta.DadosDetalhamentoConsulta;
@@ -15,12 +16,15 @@ import org.springframework.web.bind.annotation.*;
 public class ConsultaController {
 
     @Autowired
+    private AgendaDeConsultas agenda;
+
+    @Autowired
     private ConsultaRepository repository;
 
     @PostMapping
     @Transactional
     public ResponseEntity agendar (@RequestBody @Valid DadosAgendamentoConsulta dados){
-        System.out.println(dados);
+        agenda.agendar(dados);
         return ResponseEntity.ok(new DadosDetalhamentoConsulta(null,null,null,null));
     }
 }
