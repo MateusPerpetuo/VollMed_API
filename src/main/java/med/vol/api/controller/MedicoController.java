@@ -42,7 +42,6 @@ public class MedicoController {
 
         var page = repository.findAllByAtivoTrue(paginacao)
                 .map(DadosListagemMedico::new);
-
          return ResponseEntity.ok(page);
     }
 
