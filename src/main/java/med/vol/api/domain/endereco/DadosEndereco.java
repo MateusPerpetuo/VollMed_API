@@ -1,6 +1,8 @@
 package med.vol.api.domain.endereco;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public record DadosEndereco(
@@ -17,4 +19,5 @@ public record DadosEndereco(
         String uf,
         String complemento,
         String numero) {
+
 }
