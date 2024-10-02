@@ -53,3 +53,50 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[Flyway](https://flywaydb.org)**
 - **[Lombok](https://projectlombok.org)**
 
+# 🖼 Imagens
+
+
+
+### HTTP Requests
+
+- User Login
+
+  ![image](https://github.com/user-attachments/assets/2d2cae6b-eebb-4d60-b36d-3aec6e57849b)
+
+- Qualquer requisição sem um token válido
+
+  ![image](https://github.com/user-attachments/assets/4ea0785d-45a3-4ff8-8fa7-aa70e94f3d22)
+
+
+#### CRUD funciando igual para Medico e Paciente (CRUD Doctor and Patientes)
+
+- Cadastrar Novo Médico (Create new Doctor)
+
+  ![image](https://github.com/user-attachments/assets/004d5603-293b-4a38-ba38-454c6f46bce6)
+
+- Atualizar cadastro de Médico (UPDATE Doctor)
+
+  ![image](https://github.com/user-attachments/assets/3642c1a9-ba9f-4739-813f-54dac6486275)
+
+
+- 
+
+
+### Banco de dados (Data Base)
+
+- Usuários (Users)
+
+  ![image](https://github.com/user-attachments/assets/a088220d-eb99-4b2b-8bda-ef83c1484033)
+
+- Médicos (Doctors)
+
+  ![image](https://github.com/user-attachments/assets/f0d0e43c-397a-4aea-8c53-c52905c78083)
+
+
+- Pacientes (Patients)
+
+  ![image](https://github.com/user-attachments/assets/ab829eb4-4313-433f-aa0b-313dc4f930d4)
+
+- Consultas (Appointments) 
+
+  ![image](https://github.com/user-attachments/assets/de3e6b94-47f4-46f8-a656-d9260513c503)
