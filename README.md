@@ -63,14 +63,14 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 
   ![image](https://github.com/user-attachments/assets/2d2cae6b-eebb-4d60-b36d-3aec6e57849b)
 
-- Qualquer requisição sem um token válido
+- Qualquer requisição sem um token válido (Any request without a valid token)
 
   ![image](https://github.com/user-attachments/assets/4ea0785d-45a3-4ff8-8fa7-aa70e94f3d22)
 
 
 #### CRUD funciando igual para Medico e Paciente (CRUD Doctor and Patientes)
 
-- Cadastrar Novo Médico (Create new Doctor)
+- Cadastrar Novo Médico (CREATE new Doctor)
 
   ![image](https://github.com/user-attachments/assets/004d5603-293b-4a38-ba38-454c6f46bce6)
 
@@ -79,7 +79,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
   ![image](https://github.com/user-attachments/assets/3642c1a9-ba9f-4739-813f-54dac6486275)
 
 
-- 
+- Excluir Médico (DELETE Doctor
 
 
 ### Banco de dados (Data Base)
