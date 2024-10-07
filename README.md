@@ -55,11 +55,10 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 
 # 🖼 Imagens
 
-## 🎬 Video do projeto funcionando
 
 ![VOLLMED_API-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/2220f4d4-85ca-465d-ae12-ee0306d6b137)
 
-[🔗 Assista ao vídeo da API funcionando no Linkedin](https://www.linkedin.com/posts/mateusperpetuo_springboot-java-apirest-activity-7249080670214352897-97WJ?utm_source=share&utm_medium=member_desktop)
+[🔗 Assista ao vídeo completo da API funcionando no Linkedin](https://www.linkedin.com/posts/mateusperpetuo_springboot-java-apirest-activity-7249080670214352897-97WJ?utm_source=share&utm_medium=member_desktop)
 
 ## HTTP Requests
 
